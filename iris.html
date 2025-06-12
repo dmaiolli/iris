@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dia dos Namorados</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      overflow: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      padding: 2rem;
+      text-align: center;
+    }
+    section.visible {
+      opacity: 1;
+    }
+    h1, p {
+      max-width: 600px;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+      max-height: 70vh;
+    }
+    @media (max-width: 600px) {
+      img {
+        max-width: 100%;
+        max-height: 40vh;
+      }
+    }
+    iframe {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+    }
+    .typewriter {
+      border-right: .15em solid #000;
+      white-space: normal;
+      overflow-wrap: break-word;
+      font-size: 1.2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    .scroll-indicator {
+      font-size: 2.5rem;
+      opacity: 0.9;
+      animation: bounce 2s infinite;
+      margin-top: 2rem;
+    }
+    #password-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    #password-overlay input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+    }
+    #password-overlay button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #ff7eb3;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    #password-overlay button:hover {
+      background: #ff4f7a;
+    }
+    #erro {
+      color: red;
+      margin-top: 0.8rem;
+      display: none;
+      font-weight: 600;
+    }
+    /* PRIMEIRA SEÇÃO ESTILO */
+    section.step:first-of-type {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 0.05em;
+      gap: 2rem;
+      padding: 3rem 1.5rem;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+    section.step:first-of-type h1 {
+      margin-bottom: 0.5rem;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .typewriter {
+        font-size: 1rem;
+      }
+      iframe {
+        height: 200px;
+      }
+      section.step:first-of-type {
+        font-size: 2rem;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+      }
+      .scroll-indicator {
+        font-size: 2rem;
+      }
+      .scroll-legend {
+        font-size: 1rem;
+      }
+      #password-overlay input {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="password-overlay">
+  <h2>Qual a data que começamos a namorar? (formato: dd/mm/aaaa)</h2>
+  <input type="text" id="password" placeholder="Ex: 14/02/2020" />
+  <button onclick="verificarSenha()">Entrar</button>
+  <p id="erro">Senha incorreta, tente novamente.</p>
+</div>
+
+<section class="step">
+  <h1>Feliz Dia dos Namorados Meu Amor💘</h1>
+  <div class="scroll-indicator"><p class="scroll-legend">⬇️ Role para baixo</p></div>
+</section>
+
+<section class="step">
+  <p>Fiz esse site especialmente para você. Cada scroll revela algo especial...</p>
+</section>
+
+<section class="step">
+  <p>E essa música sempre me faz lembrar de você:</p>
+  <iframe src="https://www.youtube.com/embed/NdYWuo9OFAw" allowfullscreen></iframe>
+  <p>Prometo que ainda vou aprender a tocar ela</p>
+</section>
+
+<section class="step">
+  <img src="img/primeira-foto.jpeg" alt="Foto nossa" />
+  <p>Foto do dia que nos tornamos quase oficialmente namorados</p>
+</section>
+
+<section class="step">
+  <img src="img/pedido.jpeg" alt="Foto nossa" />
+  <p>Foto do dia que nos tornamos oficialmente namorados (minha melhor escolha) 💍</p>
+</section>
+
+<section class="step">
+  <p>Ps. Lembro daquele dia como se fosse ontem. Você estava maravilhosa, como sempre.</p>
+</section>
+
+<section class="step">
+  <img src="img/super-heroi.jpeg" alt="Foto nossa" />
+  <p>Prometo ser seu super-heroi sempre que estiver em apuros</p>
+</section>
+
+<section class="step">
+  <img src="img/abraco.jpeg" alt="Foto nossa" />
+  <p>O lugar mais confortavel do mundo é no teu abraço</p>
+</section>
+
+<section class="step">
+  <img src="img/sorrir.jpeg" alt="Foto nossa" />
+  <p>Sorrir, te vendo sorrir, é ser feliz duas vezes</p>
+</section>
+
+<section class="step">
+  <p>Te amo muito mais do que palavras podem explicar ❤️</p>
+</section>
+
+<section class="step">
+  <p class="typewriter" id="carta"></p>
+</section>
+
+<footer style="text-align: center; padding: 2rem; font-size: 1rem; opacity: 0.6;">
+  by seu momo❤️
+</footer>
+
+<script>
+  const steps = document.querySelectorAll('.step');
+  const overlay = document.getElementById('password-overlay');
+  const input = document.getElementById('password');
+  const erro = document.getElementById('erro');
+
+  function verificarSenha() {
+    if (input.value === '09/03/2024') {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      iniciarObserver();
+    } else {
+      erro.style.display = 'block';
+    }
+  }
+
+  function iniciarObserver() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.querySelector('#carta')) {
+            iniciarDigitacao();
+          }
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    steps.forEach(step => {
+      observer.observe(step);
+    });
+  }
+
+  const linhasCarta = [
+    "Cada momento ao seu lado me mostra o quanto sou sortudo por ter você na minha vida.",
+    "O amor que sinto por você só cresce a cada segundo.",
+    "Você é a primeira pessoa em quem penso ao acordar e a última antes de dormir.",
+    "Quero muito que você saiba o quanto é especial pra mim.",
+    "Já não consigo mais imaginar meus dias sem a sua risada, seu toque, sua presença.",
+    " ",
+    "Sabe, eu sempre me perguntava como descobriria quem seria a pessoa certa,",
+    "Sempre me perguntava, como vou saber que é amor verdadeiro? E eu descobri",
+    " ",
+    "Descobri que era amor quando eu queria dizer que te amava todas as noites antes de dormir.",
+    "Descobri que era amor quando cada mensagem sua me fazia sorrir de felicidade.",
+    "Descobri que era amor quando só de ouvir sua voz, meu dia melhorava.",
+    "Descobri que era amor quando comecei a contar as horas para te ver novamente.",
+    "Descobri que era amor quando percebi que meu lugar favorito no mundo era ao seu lado.",
+    "Descobri que era amor quando planejar o futuro só fazia sentido com você nele.",
+    "Descobri que era amor quando cada detalhe seu virou parte da minha rotina feliz.",
+    "Descobri que era amor quando até os dias ruins ficavam melhores com você por perto.",
+    "Descobri que era amor quando percebi que você é meu ponto de paz em meio ao caos.",
+    " ",
+    "Por fim, mas não menos importante, quero que saiba que você nunca vai estar sozinha",
+    "Mesmo quando tudo parecer dificil, quando tudo parecer que não vai dar certo,",
+    "Eu to aqui.",
+    "Te amo para sempre meu bem ❤️"
+  ];
+
+  let indexLinha = 0;
+  let indexChar = 0;
+  let cartaEl = null;
+  let linhaAtual = '';
+
+  function iniciarDigitacao() {
+    cartaEl = document.getElementById('carta');
+    if (!cartaEl.dataset.started) {
+      cartaEl.dataset.started = true;
+      linhaAtual = linhasCarta[indexLinha];
+      digitarProximoChar();
+    }
+  }
+
+  function digitarProximoChar() {
+    if (indexChar < linhaAtual.length) {
+      cartaEl.innerHTML += linhaAtual[indexChar];
+      indexChar++;
+      setTimeout(digitarProximoChar, 60);
+    } else {
+      cartaEl.innerHTML += '<br>';
+      indexLinha++;
+      if (indexLinha < linhasCarta.length) {
+        indexChar = 0;
+        linhaAtual = linhasCarta[indexLinha];
+        setTimeout(digitarProximoChar, 500);
+      }
+    }
+  }
+</script>
+</body>
+</html>
